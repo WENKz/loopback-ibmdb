@@ -9,13 +9,13 @@
 process.env.NODE_ENV = 'test';
 var assert = require('assert');
 var EventEmitter = require('events').EventEmitter;
-var IBMDB = require('../').IBMDB;
+var ODBCConnector = require('../').ODBCConnector;
 
 var db = new EventEmitter;
 
 describe('functional test', function() {
   before(function(done) {
-    db.connector = new IBMDB('db2', global.config);
+    db.connector = new ODBCConnector('db2', global.config);
     db.connector.dataSource = db;
     done();
   });

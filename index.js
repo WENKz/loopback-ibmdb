@@ -5,4 +5,4 @@
 
 'use strict';
 
-exports.IBMDB = require('./lib/ibmdb');
+exports.ODBCConnector = require('./lib/odbc');

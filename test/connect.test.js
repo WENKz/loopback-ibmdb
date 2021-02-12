@@ -7,14 +7,14 @@
 
 /* eslint-env node, mocha */
 var EventEmitter = require('events').EventEmitter;
-var IBMDB = require('../').IBMDB;
+var ODBCConnector = require('../').ODBCConnector;
 
 describe('basic connector', function() {
   var ds = new EventEmitter;
   var connection = null;
 
   it('can be constructed', function(done) {
-    ds.connector = new IBMDB('db2', global.config);
+    ds.connector = new ODBCConnector('db2', global.config);
     ds.connector.dataSource = ds;
     done();
   });
